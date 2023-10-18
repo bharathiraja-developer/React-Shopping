@@ -1,7 +1,7 @@
 import React from "react";
 import Products from "./Products";
 
-function AllProducts() {
+function AllProducts({ handleValue, cartValue }) {
   let mobiles = [
     {
       id: "1",
@@ -80,6 +80,8 @@ function AllProducts() {
               salePrice={mobile.salePrice}
               starRating={mobile.starRating}
               src={mobile.src}
+              handleValue={handleValue}
+              cartValue={cartValue}
             />
           ))}
         </div>

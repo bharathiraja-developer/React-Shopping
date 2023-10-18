@@ -1,7 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import Star from "./Star";
+import Button from "./Button";
 
-function Products({ mobileName, mrpPrice, salePrice, starRating, src }) {
+function Products({
+  mobileName,
+  mrpPrice,
+  salePrice,
+  starRating,
+  src,
+  handleValue,
+  cartValue,
+}) {
   return (
     <div className="col mb-5">
       <div className="card h-100">
@@ -17,14 +26,7 @@ function Products({ mobileName, mrpPrice, salePrice, starRating, src }) {
             ₹{salePrice}
           </div>
         </div>
-
-        <div className="card-footer p-4 pt-0 border-top-0 bg-transparent">
-          <div className="text-center">
-            <a className="btn btn-outline-dark mt-auto" href="#">
-              Add to cart
-            </a>
-          </div>
-        </div>
+        <Button cart={cartValue} setCart={handleValue} />
       </div>
     </div>
   );
